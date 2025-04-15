@@ -1,0 +1,1 @@
+__ci_last_regenerate|i:1742263260;_ci_previous_url|s:46:"http://localhost/projeto_18_login/public/login";_ci_old_input|a:2:{s:3:"get";a:0:{}s:4:"post";a:2:{s:12:"text_usuario";s:5:"admin";s:10:"text_senha";s:8:"dsadsads";}}__ci_vars|a:2:{s:13:"_ci_old_input";s:3:"old";s:11:"login_error";s:3:"old";}login_error|s:26:"Login ou senha inválidos.";
