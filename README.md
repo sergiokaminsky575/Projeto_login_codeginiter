@@ -1,65 +1,138 @@
-<<<<<<< HEAD
-# Projeto_login_codeginiter
-Projeto Login CodeIgniter 
-=======
-# CodeIgniter 4 Framework
+# Projeto de Login com CodeIgniter 4
 
-## What is CodeIgniter?
+![GitHub repo size](https://img.shields.io/github/repo-size/sergiokaminsky575/Projeto_login_codeginiter)
+![GitHub last commit](https://img.shields.io/github/last-commit/sergiokaminsky575/Projeto_login_codeginiter)
+![PHP version](https://img.shields.io/badge/PHP-%3E=8.1-blue)
+![License](https://img.shields.io/github/license/sergiokaminsky575/Projeto_login_codeginiter)
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Este é um projeto simples de sistema de login desenvolvido com o framework **CodeIgniter 4**.  
+O objetivo é fornecer uma base segura para autenticação de usuários em aplicações PHP modernas.
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+---
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## 🚀 Funcionalidades
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+- Tela de login com verificação de credenciais
+- Sistema de autenticação com sessões
+- Redirecionamento após login
+- Logout
+- Validações básicas de formulário
 
-## Important Change with index.php
+---
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+## 🖼️ Prints de Tela
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+### Página de Login
 
-**Please** read the user guide for a better explanation of how CI4 works!
+![Tela de login](prints/login.png)
 
-## Repository Management
+![alt text](image.png)
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+![image](https://github.com/user-attachments/assets/11250c84-6b57-4ebf-aaad-852884d94efa)
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
 
-## Contributing
+### Tela pós-login (dashboard ou página protegida)
 
-We welcome contributions from the community.
+![Página protegida](prints/dashboard.png)
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+*As imagens acima devem estar na pasta `prints/` dentro do projeto.*
 
-## Server Requirements
+---
 
-PHP version 8.1 or higher is required, with the following extensions installed:
+## 🧱 Tecnologias Utilizadas
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+- **PHP 8.1+**
+- **CodeIgniter 4**
+- **MySQL**
+- HTML, CSS (Bootstrap opcional)
 
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
+---
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+## 📁 Estrutura do Projeto
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
->>>>>>> 6932346 (Primeiro commit)
+```
+projeto_login_codeigniter/
+├── app/
+├── public/
+├── writable/
+├── .env
+├── composer.json
+└── README.md
+```
+
+---
+
+## ⚙️ Como Rodar Localmente
+
+1. **Clone o repositório:**
+
+```bash
+git clone https://github.com/seuusuario/projeto_login_codeigniter.git
+cd projeto_login_codeigniter
+```
+
+2. **Instale as dependências (se estiver usando Composer):**
+
+```bash
+composer install
+```
+
+3. **Configure o `.env`:**
+
+```
+database.default.hostname = localhost
+database.default.database = nome_do_banco
+database.default.username = root
+database.default.password = sua_senha
+database.default.DBDriver = MySQLi
+```
+
+4. **Crie o banco de dados e execute as migrations** (se houver).
+
+5. **Inicie o servidor local:**
+
+```bash
+php spark serve
+```
+
+Acesse: `http://localhost:8080`
+
+---
+
+## ☁️ Deploy em Hospedagem Compartilhada
+
+1. Faça upload dos arquivos **fora da pasta `public/`** para o diretório raiz do seu plano (ex: `meusite.com/`).
+2. Aponte o conteúdo da pasta `public/` para o diretório **público da hospedagem** (como `public_html/`).
+3. Edite o caminho do autoload no `index.php` dentro de `public/`, por exemplo:
+
+```php
+require __DIR__ . '/../vendor/autoload.php';
+$pathsPath = __DIR__ . '/../app/Config/Paths.php';
+```
+
+4. Ajuste as permissões da pasta `writable/` (normalmente 755 ou 775).
+5. Certifique-se de configurar corretamente o `.env` com o banco de dados da hospedagem.
+
+---
+
+## ✅ Requisitos
+
+- PHP 8.1 ou superior
+- Extensões:
+  - `intl`
+  - `mbstring`
+  - `json`
+  - `mysqlnd`
+
+---
+
+## 🤝 Contribuições
+
+Contribuições são bem-vindas!  
+Abra issues ou envie pull requests.
+
+---
+
+## 📄 Licença
+
+MIT - veja o arquivo [LICENSE](LICENSE).
